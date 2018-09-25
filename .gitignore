@@ -1,3 +1,5 @@
+.config
+.config.old
 /openwrt-sdk-ar71xx-generic_gcc-7.3.0_musl.Linux-x86_64/bin
 /openwrt-sdk-ar71xx-generic_gcc-7.3.0_musl.Linux-x86_64/tmp
 /openwrt-sdk-ar71xx-generic_gcc-7.3.0_musl.Linux-x86_64/build_dir
