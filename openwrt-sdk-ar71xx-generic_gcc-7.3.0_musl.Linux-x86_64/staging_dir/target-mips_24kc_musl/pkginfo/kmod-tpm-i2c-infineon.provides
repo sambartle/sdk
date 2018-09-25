@@ -1,0 +1,3 @@
+i2c-dev.ko
+tpm.ko
+tpm_i2c_infineon.ko

@@ -1,0 +1,11 @@
+libc.so
+libgcc_s.so.1
+libglutil.so
+libglwificore.so
+libiwinfo.so
+libjson-c.so.2
+libjson-c.so.2.0.2
+libnl-tiny.so
+libubox.so
+libubus.so
+libuci.so

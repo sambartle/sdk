@@ -1,0 +1,79 @@
+<div class="row" style="margin-top: 25px;">
+    <div class="col-lg-12">
+        <div class="panel with-nav-tabs panel-default">
+            <div class="panel-heading">
+                <h4>
+                    <span class="circle active"></span>
+                    {{t("VPN")}}
+                </h4>
+            </div>
+            <div class="panel-body">
+                <ul class="nav nav-tabs" id="vpn-ul">
+                    <!-- Home -->
+                    <li class="active">
+                        <a href="#vpn-Home" data-toggle="tab">
+                            {{t("Home")}}
+                        </a>
+                    </li>
+                    <!-- Travel -->
+                    <li role="presentation">
+                        <a href="#vpn-Travel" data-toggle="tab">
+                            {{t("Travel")}}
+                            <span class="hidden-xs"></span>
+                        </a>
+                    </li>
+                </ul>
+                </br>
+                <div class="tab-content">
+                    <div id="vpn-Home" class="tab-pane fade in active applit-box">
+                        <ul class="applit-list clearfix">
+                            <!-- server -->
+                            <li class="applit_list">
+                                <a @click="$router.push('vpnserver')" class="clsLink2vpnserver">
+                                    <span class="glyphicon glyphicon-cog"></span>
+                                    <span class="applit_text">{{t("VPN Server")}}</span>
+                                </a>
+                            </li>
+                            <li class="applit_list">
+                                <a @click="$router.push('ssserver')" class="clsLink2ssserver">
+                                    <span class="glyphicon glyphicon-cog"></span>
+                                    <span class="applit_text">{{t("SS Server")}}</span>
+                                </a>
+                            </li>
+                            <li class="applit_list">
+                                <a @click="$router.push('wgserver')" class="clsLink2wgserver">
+                                    <span class="glyphicon glyphicon-cog"></span>
+                                    <span class="applit_text">{{t("Wireguard Server")}}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="vpn-Travel" class="tab-pane fade applit-box">
+                        <ul class="applit-list clearfix">
+                            <!-- Client -->
+                            <li class="applit_list">
+                                <a @click="$router.push('vpnclient')" class="clsLink2vpnclient">
+                                    <span class="glyphicon glyphicon-cog"></span>
+                                    <span class="applit_text">{{t("VPN Client")}}</span>
+                                </a>
+                            </li>
+                            <li class="applit_list">
+                                <a @click="$router.push('ssclient')" class="clsLink2ssclient">
+                                    <span class="glyphicon glyphicon-cog"></span>
+                                    <span class="applit_text">{{t("SS Client")}}</span>
+                                </a>
+                            </li>
+                            <li class="applit_list">
+                                <a @click="$router.push('wgclient')" class="clsLink2wgclient">
+                                    <span class="glyphicon glyphicon-cog"></span>
+                                    <span class="applit_text">{{t("Wireguard Client")}}</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+libc.so
+libgcc_s.so.1
+libiwinfo.so
+liblua.so.5.1.5
+libnl-tiny.so
+libubox.so
+libuci.so

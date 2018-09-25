@@ -1,0 +1,192 @@
+<div v-show="moInfo.code != '-17' && moInfo.code != '-3'" id="inter-modem">
+    <div class="state-box panel panel-default">
+        <!-- head -->
+        <div class="internet-btn panel-heading">
+            <h4>
+                <span class="circle" :class="circleClass"></span>
+                <!-- 标题或者运营商信息 -->
+                {{moInfo.success&&moCarrier.name ? moCarrier.name : t($lang.internet.modem)}}
+            </h4>
+            <!-- 信号显示 -->
+            <span class="signal" v-show="moStatus.signal && moInfo.modems && moInfo.modems[0].modem_id !== 255">
+                <span class="signal-modem">{{moStatus.mode}}</span>
+                <span class="signal-one" :class="{'singnal-active':moStatus.signal >= 1}"></span>
+                <span class="signal-two" :class="{'singnal-active':moStatus.signal >= 2}"></span>
+                <span class="signal-three" :class="{'singnal-active':moStatus.signal >= 3}"></span>
+                <span class="signal-four" :class="{'singnal-active':moStatus.signal == 4}"></span>
+            </span>
+            <!-- 短信 -->
+            <router-link to="/smessage" v-show="moStatus.newsms > 0">
+                <span class="fa fa-envelope pull-right" style="padding: 10px;font-size: 24px;position: relative;">
+                    <span class="newsmsNum">{{moStatus.newsms}}</span>
+                </span>
+            </router-link>
+        </div>
+        <!-- 支持3G/4G -->
+        <div class="panel-bg-3G-Modem" style="position: relative;min-height: 125px">
+            <div class="panel-body panel-status">
+                <!-- 模块存在 moInfo -->
+                <div v-if="moInfo.success && !timeout">
+                    <div v-if="!moreset" class="modem-loading">
+                        <gl-loading></gl-loading>
+                    </div>
+                    <div v-else>
+                        <!-- sim卡插入 sim卡信息 -->
+                        <div v-if="mosetting">
+                            <span class="list-group-item" v-show="moInfo.modems[0].name != 'unknown'">
+                                <span class="text-left">{{t($lang.internet.modemName)}}</span>
+                                <span id="idUsbStaIp" class="pull-right">{{moInfo.modems[0].name}}</span>
+                            </span>
+                            <span class="list-group-item" v-show="moInfo.modems && moInfo.modems[0].IMEI">
+                                <span class="text-left">IMEI</span>
+                                <span id="idUsbStaIp" class="pull-right">{{moInfo.modems[0].IMEI}}</span>
+                            </span>
+                            <!-- 网络已连接显示 rx/tx -->
+                            <span v-show="moStatus.up == 'on'">
+                                <span class="list-group-item">
+                                    <span class="text-left">{{t($lang.internet.ipAddress)}}</span>
+                                    <span id="idUsbStaIp" class="pull-right" v-text="moStatus.ip_addr">-</span>
+                                </span>
+                                <span class="list-group-item">
+                                    <span class="text-left">{{t($lang.internet.upload)}}</span>
+                                    <span id="idUsbStaIp" class="pull-right" v-text="getFlow(moStatus.upload)">-</span>
+                                </span>
+                                <span class="list-group-item">
+                                    <span class="text-left">{{t($lang.internet.download)}}</span>
+                                    <span id="idUsbStaIp" class="pull-right" v-text="getFlow(moStatus.download)">-</span>
+                                </span>
+                            </span>
+                            <!-- 断开连接 自动连接按钮 -->
+                            <div style="text-align: center;padding: 10px 0px" class="conneting">
+                                <!-- disconnect -->
+                                <gl-btn type="danger" @click="moDisconnect" :disabled="mobtnStatus" v-if="moStatus.up == 'on'">
+                                    <span>{{t($lang.button.disconnect)}}</span>
+                                    <span class="fa fa-circle-o-notch glyphicon-spin-animate" v-show="mobtnStatus"></span>
+                                </gl-btn>
+                                <!-- automat -->
+                                <gl-btn type="default" @click="autoSet" :disabled="mobtnStatus" v-else>
+                                    <span>{{t($lang.button.autosetup)}}</span>
+                                    <span class="fa fa-circle-o-notch glyphicon-spin-animate" v-show="mobtnStatus"></span>
+                                </gl-btn>
+                            </div>
+                        </div>
+                        <!-- sim卡设置 -->
+                        <div v-else>
+                            <!-- Device -->
+                            <span class="list-group-item clearfix">
+                                <div class="text-left modem-left pull-left">
+                                    <gl-label :labelValue="$lang.label.device"></gl-label>
+                                </div>
+                                <div class="list-input-field input-append">
+                                    <div class="password-check">
+                                        <div class="passtrengthMeter">
+                                            <gl-select :option="moInfo.modems[0].ports" v-model="modevice"></gl-select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </span>
+                            <!-- service -->
+                            <span class="list-group-item clearfix">
+                                <div class="text-left modem-left pull-left">
+                                    <gl-label :labelValue="$lang.label.service"></gl-label>
+                                </div>
+                                <div class="list-input-field input-append">
+                                    <div class="password-check">
+                                        <div class="passtrengthMeter">
+                                            <gl-select :option="moServiceList" v-model="moservice"></gl-select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </span>
+                            <!-- APN -->
+                            <span class="list-group-item clearfix">
+                                <div class="text-left modem-left pull-left">
+                                    <gl-label :labelValue="$lang.label.apn" style="text-transform: uppercase"></gl-label>
+                                </div>
+                                <!-- web -->
+                                <div style="float: right;padding: 10px 25px 10px 0px;" class="visible-xs" v-if="moInfo.success && apns.length <= 0 && !mobtnStatus && !configapn">
+                                    <span class="fa fa-circle-o-notch glyphicon-spin-animate"></span>
+                                </div>
+                                <div class="list-input-field input-append">
+                                    <div class="password-check">
+                                        <div class="passtrengthMeter">
+                                            <gl-select :option="apns" v-model="moapn" optionName="-apn" input @postValue="getmoapn"></gl-select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- pc -->
+                                <div style="float: right;padding: 10px" class="hidden-xs" v-if="moInfo.success && apns.length <= 0 && !mobtnStatus && configapn">
+                                    <span class="fa fa-circle-o-notch glyphicon-spin-animate"></span>
+                                </div>
+                            </span>
+                            <span class="list-group-item  text-center clearfix">
+                                <a @click="$router.push('attools')" v-show="moInfo.modems && moInfo.modems[0].modem_id !== 255">{{t($lang.index.atCommand)}}</a>
+                                <a @click="changeModal" style="margin: 0 20px;">{{t($lang.button.advanced)}}</a>
+                                <a @click="$router.push('smessage')" style="margin-right: 20px" v-show="moStatus.success && moInfo.modems && moInfo.modems[0].modem_id !== 255 && moCarrier.success">{{t($lang.index.shrotmsg)}}</a>
+                                <!-- 没有获取sim运营商信息 modem reset -->
+                                <a @click="clickMoReset" v-show="moInfo.success">{{t($lang.internet.modemReset)}}</a>
+                            </span>
+                            <!-- 高级设置 -->
+                            <span class="list-group-item clearfix" v-show="modeStatus">
+                                <div class="text-left modem-left pull-left">
+                                    <gl-label :labelValue="$lang.label.pincode"></gl-label>
+                                </div>
+                                <div class="list-input-field input-append input-group">
+                                    <gl-input type="text" :placeholder="$lang.internet.option" v-model="mopincode"></gl-input>
+                                </div>
+                            </span>
+                            <span class="list-group-item clearfix" v-show="modeStatus">
+                                <div class="text-left modem-left pull-left">
+                                    <gl-label :labelValue="$lang.label.dianum"></gl-label>
+                                </div>
+                                <div class="list-input-field input-append input-group">
+                                    <gl-input type="text" :placeholder="$lang.internet.option" v-model="mopdanum"></gl-input>
+                                </div>
+                            </span>
+                            <span class="list-group-item clearfix" v-show="modeStatus">
+                                <div class="text-left modem-left pull-left">
+                                    <gl-label :labelValue="$lang.label.userName"></gl-label>
+                                </div>
+                                <div class="list-input-field input-append input-group">
+                                    <gl-input type="text" :placeholder="$lang.internet.option" v-model="mousername"></gl-input>
+                                </div>
+                            </span>
+                            <span class="list-group-item clearfix" v-show="modeStatus">
+                                <div class="text-left modem-left pull-left">
+                                    <gl-label :labelValue="$lang.internet.psw"></gl-label>
+                                </div>
+                                <div class="list-input-field input-append input-group">
+                                    <gl-input type="password" :placeholder="$lang.internet.option" v-model="mopasswd" inputShow></gl-input>
+                                </div>
+                            </span>
+                            <!-- 取消 自动 应用按钮 -->
+                            <div class="text-center" style="padding: 10px 0">
+                                <gl-btn type="modify" @click="clickBack" :disabled="mobtnStatus" v-show="(moStatus.up == 'on' && checkModem) || (moInfo.modems && moInfo.modems[0].modem_id !== 255 && moCarrier.success && !mobtnStatus && checkBtn !== 'Abort' && checkModem)">{{t($lang.button.cancel)}}</gl-btn>
+                                <gl-btn :type="btnType" @click="checkStatus" :disabled="mobtnStatus || !checkModem">
+                                    {{t(checkBtn)}}
+                                    <span class="fa fa-circle-o-notch glyphicon-spin-animate" v-show="mobtnStatus || !checkModem"></span>
+                                </gl-btn>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 模块不存在 -->
+                <div v-else>
+                    <div class="internet-text clearfix">
+                        <img src="/src/static/images/3G-Modem.jpg" class="internet-img">
+                        <div class="uninter">
+                            <span>{{t($lang.internet.noModem)}}. {{t($lang.internet.plug_modem)}}.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 手动设置 -->
+        <div class="panel-heading" v-show="moInfo.success && mosetting">
+            <span>
+                <a @click="clickMoSet">{{t($lang.internet.manuSetup)}}</a>
+            </span>
+        </div>
+    </div>
+</div>

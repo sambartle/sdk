@@ -1,0 +1,3 @@
+lzo.ko
+lzo_compress.ko
+lzo_decompress.ko

@@ -1,0 +1,22 @@
+#!/bin/sh
+
+. /lib/netifd/netifd-proto.sh
+
+cimi=""
+dev=""
+case "$DEVICENAME" in
+	ttyUSB*)
+		[ "$ACTION" = remove ] && {
+			dev=$(ls /dev/ttyUSB*)
+			[ -z "$dev" ] && { rm /tmp/cimi; }
+			exit 0
+		}
+		[ ! -e "/dev/$DEVICENAME" ] && exit 0
+		#proto_set_available modem 0
+		cimi=$(gcom -d /dev/$DEVICENAME -s /etc/gcom/getimsi.gcom|tr -cd "[0-9]")
+		if [ -n "$cimi" ];then
+			echo $cimi >/tmp/cimi
+		fi
+	;;
+esac
+

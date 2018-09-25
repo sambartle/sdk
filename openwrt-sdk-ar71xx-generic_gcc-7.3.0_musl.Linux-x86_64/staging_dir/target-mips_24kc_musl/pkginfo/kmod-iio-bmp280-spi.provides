@@ -1,0 +1,13 @@
+bmp280-spi.ko
+bmp280.ko
+i2c-dev.ko
+industrialio-triggered-buffer.ko
+industrialio.ko
+kfifo_buf.ko
+lzo.ko
+lzo_compress.ko
+lzo_decompress.ko
+regmap-core.ko
+regmap-i2c.ko
+regmap-mmio.ko
+regmap-spi.ko

@@ -1,0 +1,123 @@
+<div class="" id="idClientsPanel">
+    <!-- No WLAN -->
+    <div class="row" id="NoClientsPanel" :class="{hide:!(!wifi_list&&!lan_list)}">
+        <div class="col-lg-12">
+            <div class="panel panel-default panel-client">
+                <div class="panel-heading">
+                    <h4>
+                        <span class="circle active"></span>{{t($lang.clients.noWlanct)}}.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Get WLAN -->
+    <div class="row" id="HasClientPanel" :class="{hide:(!wifi_list&&!lan_list)}">
+        <div class="col-lg-12">
+            <div class="panel panel-default panel-client">
+                <div class="panel-heading">
+                    <h4 style="text-transform: uppercase">
+                        <span class="circle active"></span>
+                        {{t($lang.clients.clients)}}
+                    </h4>
+                    <a type="button" class="btn btn-default gli-btn-dark pull-right disabled hide" href="#">
+                        {{t($lang.clients.applyAll)}}
+                    </a>
+                </div>
+                <div class="panel-body">
+                    <ul class="nav nav-tabs hide">
+                        <li class="active">
+                            <a href="#tabActiveClients" data-toggle="tab">
+                                {{t($lang.clients.activeCts)}}
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#tabBlacklist" data-toggle="tab">
+                                {{t($lang.clients.blackList)}}
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="tabActiveClients">
+                            <div class=" panel-clients">
+                                <div class="list-group client-list ">
+                                    <span class="list-group-item client-list-heading">
+                                        <div>
+                                            <ul class="client-list-row ">
+                                                <li class="col-sm-1 col-lg-1 col-md-1 wifi-rank hidden-xs" style="padding-left: 15px;">#</li>
+                                                <li class="col-xs-4 wifi-name tex-limited " style="text-align: center;">
+                                                    {{t($lang.clients.name)}}
+                                                </li>
+                                                <li class="col-xs-5 wifi-mac" style="text-align: center;">
+                                                    {{t($lang.clients.ip_mac)}}
+                                                </li>
+                                                <li class="col-xs-2 col-lg-1 col-md-1 client-list-block pull-right">
+                                                    {{t($lang.clients.block)}}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </span>
+                                    <div class="clsWifiClientsList">
+                                        <!-- WAN -->
+                                        <span class="list-group-item client-item clsWifiClientsItem" v-for="(item, index) in wifi_list">
+                                            <ul class="client-list-row">
+                                                <li class="col-sm-1 col-lg-1 col-md-1 wifi-client-rank hidden-xs" style="padding-left: 15px;">{{index + 1}}</li>
+                                                <li class="col-xs-4 wifi-client-name tex-limited" style="text-align: center;">
+                                                    {{item.name}}
+                                                    <span v-show="item.type == '5G'" class="badge badge-pill badge-secondary" style="background: #cccccc">5G</span>
+                                                </li>
+                                                <li class="col-xs-5  wifi-client-ip-mac" style="text-align: center;">
+                                                    <span class="wifi-client-ip">{{item.ip}}</span>
+                                                    <br/>
+                                                    <span class="wifi-client-mac">{{item.mac}}</span>
+                                                </li>              
+                                                <li class="col-xs-2 col-lg-1 col-md-1 pull-right">
+                                                    <gl-tg-btn size="22px" class="btn-toggler" v-model="item.blocked" :disabled="item.remote" @change="block(item, index, wifi_list)" theme="default"></gl-tg-btn>
+                                                </li>
+                                            </ul>
+                                        </span>
+                                        <!-- LAN -->
+                                        <span class="list-group-item client-item clsLanClientsItem" v-for="(data, index) in lan_list">
+                                            <ul class="client-list-row cleanfix">
+                                                <li class="col-sm-1 col-lg-1 col-md-1 lan-client-rank hidden-xs" style="padding-left: 15px;">{{wifi_list.length + index + 1}}</li>
+                                                <li class="col-xs-4 lan-client-name tex-limited" style="text-align: center;">
+                                                    {{data.name}}
+                                                    <span v-show="data.type == '5G'" class="badge badge-pill badge-secondary" style="background: #cccccc">5G</span>
+                                                </li>
+                                                <li class="col-xs-5  lan-client-ip-mac" style="text-align: center;">
+                                                    <span class="lan-client-ip">{{data.ip}}</span>
+                                                    <br/>
+                                                    <span class="lan-client-mac">{{data.mac}}</span>
+                                                </li>
+                                                <li class="col-xs-2 col-lg-1 col-md-1 pull-right">
+                                                    <gl-tg-btn size="22px" class="btn-toggler" v-model="data.blocked" :disabled="data.remote" @change="block(data, index, lan_list)" theme="default"></gl-tg-btn>
+                                                </li>
+                                            </ul>
+                                        </span>
+                                        <!-- unkonw_list -->
+                                        <span class="list-group-item client-item clsLanClientsItem" v-for="(data, index) in unkonw_list">
+                                            <ul class="client-list-row cleanfix">
+                                                <li class="col-sm-1 col-lg-1 col-md-1 lan-client-rank hidden-xs" style="padding-left: 15px;">{{wifi_list.length + lan_list.length + index + 1}}</li>
+                                                <li class="col-xs-4 lan-client-name tex-limited" style="text-align: center;">
+                                                    {{data.name}}
+                                                    <span v-show="data.type == '5G'" class="badge badge-pill badge-secondary" style="background: #cccccc">5G</span>
+                                                </li>
+                                                <li class="col-xs-5 lan-client-ip-mac">
+                                                    <span class="lan-client-ip">{{data.ip}}</span>
+                                                    <br/>
+                                                    <span class="lan-client-mac">{{data.mac}}</span>
+                                                </li>
+                                                <li class="col-xs-2 col-lg-1 col-md-1 pull-right">
+                                                    <gl-tg-btn size="22px" class="btn-toggler" v-model="data.blocked" :disabled="data.remote" @change="block(data, index, lan_list)" theme="default"></gl-tg-btn>
+                                                </li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,4 @@
+hwmon.ko
+i2c-dev.ko
+sch5627.ko
+sch56xx-common.ko

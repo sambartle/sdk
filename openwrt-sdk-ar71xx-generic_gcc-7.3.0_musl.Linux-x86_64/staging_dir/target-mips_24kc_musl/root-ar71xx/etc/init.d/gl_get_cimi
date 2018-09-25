@@ -1,0 +1,51 @@
+#!/bin/sh /etc/rc.common
+
+START=15
+
+get_cimi()
+{
+  local cimi=""
+  for i in $(ls /dev/ttyUSB*)
+  do
+	if [ -c $i ];then
+		cimi=$(gcom -d $i -s /etc/gcom/getimsi.gcom|tr -cd "[0-9]")
+		if [ -n "$cimi" ];then
+			echo $cimi >/tmp/cimi
+			break
+		fi
+		continue
+	fi
+	break
+  done
+}
+
+
+get_modem_info()
+{
+	local name=""
+	local imei=""
+	if [ ! -f /tmp/modem-name ];then
+		name=$(gcom -d /dev/ttyUSB3 -s /etc/gcom/getmodemname.gcom|grep Rev|cut -d ' ' -f 2)
+		if [ -n "$name" ];then
+			echo $name >/tmp/modem-name
+		fi
+	fi
+
+	if [ ! -f /tmp/modem-imei ];then
+		imei=$(gcom -d /dev/ttyUSB3 -s /etc/gcom/getmodemimei.gcom)
+		if [ -n "$imei" ];then
+			echo $imei >/tmp/modem-imei
+			sed -i  '/^\s*$/d' /tmp/modem-imei
+		fi
+	fi
+	
+}
+
+start()
+{
+	model=$(awk -F': ' '/machine/ {print tolower($NF)}' /proc/cpuinfo |cut -d- -f2-)
+	if [ "$model" = "mifi" -o "$model" = "x750-4g" ];then
+		get_modem_info
+	fi
+	get_cimi
+}
