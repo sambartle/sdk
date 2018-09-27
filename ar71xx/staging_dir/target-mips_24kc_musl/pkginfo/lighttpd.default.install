@@ -1,0 +1,6 @@
+lighttpd
+lighttpd-mod-access
+lighttpd-mod-cgi
+lighttpd-mod-expire
+lighttpd-mod-fastcgi
+lighttpd-mod-proxy

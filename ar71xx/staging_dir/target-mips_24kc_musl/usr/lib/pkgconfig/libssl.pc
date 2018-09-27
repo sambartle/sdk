@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: OpenSSL-libssl
+Description: Secure Sockets Layer and cryptography libraries
+Version: 1.0.2p
+Requires.private: libcrypto
+Libs: -L${libdir} -lssl
+Libs.private: -L/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/target-mips_24kc_musl/usr/lib -L/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/target-mips_24kc_musl/lib -L/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl/usr/lib -L/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl/lib -Wl,--gc-sections -ldl -ldl
+Cflags: -I${includedir} 

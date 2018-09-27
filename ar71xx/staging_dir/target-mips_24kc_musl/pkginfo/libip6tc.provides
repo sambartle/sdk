@@ -1,0 +1,10 @@
+libc.so
+libgcc_s.so.1
+libip6tc.so
+libip6tc.so.0
+libip6tc.so.0.1.0
+libiptext.so
+libiptext6.so
+libxtables.so
+libxtables.so.12
+libxtables.so.12.0.0

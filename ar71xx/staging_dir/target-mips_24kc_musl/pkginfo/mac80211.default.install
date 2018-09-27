@@ -1,0 +1,10 @@
+kmod-ath
+kmod-ath10k
+kmod-ath9k
+kmod-ath9k-common
+kmod-cfg80211
+kmod-mac80211
+kmod-rt2x00-lib
+kmod-rt2x00-usb
+kmod-rt2800-lib
+kmod-rt2800-usb
