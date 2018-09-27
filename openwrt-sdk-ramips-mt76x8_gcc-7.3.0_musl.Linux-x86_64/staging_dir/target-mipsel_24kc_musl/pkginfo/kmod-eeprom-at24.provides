@@ -1,0 +1,4 @@
+at24.ko
+i2c-core.ko
+i2c-dev.ko
+nvmem_core.ko

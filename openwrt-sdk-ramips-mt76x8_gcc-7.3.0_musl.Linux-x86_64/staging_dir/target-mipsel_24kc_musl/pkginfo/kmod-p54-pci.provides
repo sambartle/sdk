@@ -1,0 +1,9 @@
+cfg80211.ko
+compat.ko
+crc-ccitt.ko
+libc.so
+libgcc_s.so.1
+libnl-tiny.so
+mac80211.ko
+p54common.ko
+p54pci.ko

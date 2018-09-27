@@ -1,0 +1,12 @@
+ath.ko
+carl9170.ko
+cfg80211.ko
+compat.ko
+input-core.ko
+libc.so
+libgcc_s.so.1
+libnl-tiny.so
+mac80211.ko
+nls_base.ko
+usb-common.ko
+usbcore.ko

@@ -1,0 +1,12 @@
+cfg80211.ko
+compat.ko
+crc-ccitt.ko
+libc.so
+libgcc_s.so.1
+libnl-tiny.so
+mac80211.ko
+nls_base.ko
+p54common.ko
+p54usb.ko
+usb-common.ko
+usbcore.ko

@@ -1,0 +1,5 @@
+ds2482.ko
+hwmon.ko
+i2c-core.ko
+i2c-dev.ko
+wire.ko

@@ -1,0 +1,3 @@
+xxhash.ko
+zstd_compress.ko
+zstd_decompress.ko

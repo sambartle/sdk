@@ -1,0 +1,3 @@
+parport.ko
+parport_pc.ko
+ppdev.ko

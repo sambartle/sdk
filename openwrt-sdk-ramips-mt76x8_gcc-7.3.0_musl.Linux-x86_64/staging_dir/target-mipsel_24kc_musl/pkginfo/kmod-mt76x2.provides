@@ -1,0 +1,8 @@
+cfg80211.ko
+compat.ko
+libc.so
+libgcc_s.so.1
+libnl-tiny.so
+mac80211.ko
+mt76.ko
+mt76x2e.ko

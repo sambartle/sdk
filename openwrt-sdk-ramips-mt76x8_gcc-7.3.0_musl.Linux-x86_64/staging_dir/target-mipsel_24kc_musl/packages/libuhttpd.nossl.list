@@ -1,0 +1,12 @@
+./
+./usr
+./usr/lib
+./usr/lib/libuhttpd.so
+./usr/lib/libuhttpd.so.2.0.3
+./usr/include
+./usr/include/uhttpd
+./usr/include/uhttpd/uhttpd.h
+./usr/include/uhttpd/action.h
+./usr/include/uhttpd/config.h
+./usr/include/uhttpd/client.h
+./host

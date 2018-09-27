@@ -1,0 +1,12 @@
+cfg80211.ko
+compat.ko
+crc-itu-t.ko
+eeprom_93cx6.ko
+libc.so
+libgcc_s.so.1
+libnl-tiny.so
+mac80211.ko
+rt2500pci.ko
+rt2x00lib.ko
+rt2x00mmio.ko
+rt2x00pci.ko

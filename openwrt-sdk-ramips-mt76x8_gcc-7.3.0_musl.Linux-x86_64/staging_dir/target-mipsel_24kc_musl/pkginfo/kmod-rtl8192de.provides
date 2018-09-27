@@ -1,0 +1,9 @@
+cfg80211.ko
+compat.ko
+libc.so
+libgcc_s.so.1
+libnl-tiny.so
+mac80211.ko
+rtl8192de.ko
+rtl_pci.ko
+rtlwifi.ko

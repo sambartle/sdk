@@ -1,0 +1,6 @@
+ds2490.ko
+hwmon.ko
+nls_base.ko
+usb-common.ko
+usbcore.ko
+wire.ko

@@ -1,0 +1,7 @@
+io_edgeport.ko
+libc.so
+libgcc_s.so.1
+nls_base.ko
+usb-common.ko
+usbcore.ko
+usbserial.ko

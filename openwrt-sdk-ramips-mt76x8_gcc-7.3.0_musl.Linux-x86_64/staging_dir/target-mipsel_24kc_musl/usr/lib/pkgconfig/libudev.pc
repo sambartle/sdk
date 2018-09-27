@@ -1,0 +1,10 @@
+prefix=/usr
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libudev
+Description: small;udev;shim;for;FreeBSD/devd
+Version: 143
+Requires: libevdev
+Libs: -L${libdir} -ludev
+Cflags: -I${includedir}

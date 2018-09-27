@@ -1,0 +1,4 @@
+libc.so
+libgcc_s.so.1
+libsodium.so.23
+libsodium.so.23.1.0
