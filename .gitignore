@@ -1,6 +1,6 @@
 .config
 .config.old
-glinet
+#glinet
 /ar71xx/bin
 /ar71xx/tmp
 /ar71xx/build_dir
