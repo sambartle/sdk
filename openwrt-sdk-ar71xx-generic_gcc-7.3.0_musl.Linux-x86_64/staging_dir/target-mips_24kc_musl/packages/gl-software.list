@@ -1,8 +1,0 @@
-./
-./host
-./usr
-./usr/include
-./usr/include/gl
-./usr/include/gl/software.h
-./usr/lib
-./usr/lib/libsoftwareapi.so

@@ -1,8 +1,0 @@
-lz4.ko
-lz4_compress.ko
-lz4_decompress.ko
-lzo.ko
-lzo_compress.ko
-lzo_decompress.ko
-zram.ko
-zsmalloc.ko

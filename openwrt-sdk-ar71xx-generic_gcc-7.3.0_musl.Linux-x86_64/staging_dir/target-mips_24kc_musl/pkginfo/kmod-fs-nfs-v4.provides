@@ -1,6 +1,0 @@
-dns_resolver.ko
-grace.ko
-lockd.ko
-nfs.ko
-nfsv4.ko
-sunrpc.ko

@@ -1,8 +1,0 @@
-ip6_udp_tunnel.ko
-libc.so
-libgcc_s.so.1
-libmnl.so.0
-libmnl.so.0.2.0
-libnl-tiny.so
-udp_tunnel.ko
-wireguard.ko

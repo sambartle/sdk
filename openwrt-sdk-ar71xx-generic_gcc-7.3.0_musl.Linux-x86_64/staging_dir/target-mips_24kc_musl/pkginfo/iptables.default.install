@@ -1,7 +1,0 @@
-iptables
-iptables-mod-conntrack-extra
-iptables-mod-ipopt
-ip6tables
-libip4tc
-libip6tc
-libxtables

@@ -1,6 +1,0 @@
-config server host
-	option enable '0'
-	option server '0.0.0.0'
-	option server_port '443'
-	option password 'goodlife' 
-	option encryption 'rc4-md5'

@@ -1,6 +1,0 @@
-libc.so
-libcrypto.so.1.0.0
-libgcc_s.so.1
-libssl.so.1.0.0
-libunbound.so.2
-libunbound.so.2.5.11

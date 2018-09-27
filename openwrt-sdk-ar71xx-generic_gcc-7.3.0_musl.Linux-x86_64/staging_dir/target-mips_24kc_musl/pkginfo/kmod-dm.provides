@@ -1,9 +1,0 @@
-aead.ko
-crypto_hash.ko
-crypto_null.ko
-cryptomgr.ko
-dm-crypt.ko
-dm-log.ko
-dm-mirror.ko
-dm-mod.ko
-dm-region-hash.ko

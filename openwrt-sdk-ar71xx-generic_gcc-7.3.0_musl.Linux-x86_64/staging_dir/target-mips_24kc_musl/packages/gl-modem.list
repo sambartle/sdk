@@ -1,8 +1,0 @@
-./
-./host
-./usr
-./usr/include
-./usr/include/gl
-./usr/include/gl/modem_api.h
-./usr/lib
-./usr/lib/libglmodem.so

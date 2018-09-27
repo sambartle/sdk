@@ -1,8 +1,0 @@
-configfs.ko
-g_mass_storage.ko
-libcomposite.ko
-nls_base.ko
-udc-core.ko
-usb-common.ko
-usb_f_mass_storage.ko
-usbcore.ko

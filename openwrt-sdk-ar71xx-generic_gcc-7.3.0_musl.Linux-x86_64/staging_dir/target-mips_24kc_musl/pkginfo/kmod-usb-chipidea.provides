@@ -1,8 +1,0 @@
-ci_hdrc.ko
-ehci-hcd.ko
-extcon-core.ko
-nls_base.ko
-phy-generic.ko
-udc-core.ko
-usb-common.ko
-usbcore.ko
