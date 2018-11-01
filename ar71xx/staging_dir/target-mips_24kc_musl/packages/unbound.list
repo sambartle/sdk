@@ -2,9 +2,9 @@
 ./usr
 ./usr/lib
 ./usr/lib/libunbound.a
+./usr/lib/libunbound.so.8.0.1
 ./usr/lib/libunbound.so
-./usr/lib/libunbound.so.2.5.11
-./usr/lib/libunbound.so.2
+./usr/lib/libunbound.so.8
 ./usr/include
 ./usr/include/unbound.h
 ./host

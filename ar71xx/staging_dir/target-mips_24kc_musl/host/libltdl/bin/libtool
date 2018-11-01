@@ -42,7 +42,7 @@ macro_version=2.4.6
 macro_revision=2.4.6
 
 # Assembler program.
-AS="mips-openwrt-linux-musl-gcc -c -Os -pipe -mno-branch-likely -mips32r2 -mtune=24kc -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -msoft-float -iremap/home/lancer/workspace/gl-image/openwrt-18.06.git/build_dir/target-mips_24kc_musl/libtool-2.4.6:libtool-2.4.6 -Wformat -Werror=format-security -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro"
+AS="mips-openwrt-linux-musl-gcc -c -Os -pipe -mno-branch-likely -mips32r2 -mtune=24kc -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -msoft-float -iremap/home/lancer/workspace/openwrt_clean/build_dir/target-mips_24kc_musl/libtool-2.4.6:libtool-2.4.6 -Wformat -Werror=format-security -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro"
 
 # DLL creation program.
 DLLTOOL="false"
@@ -85,19 +85,19 @@ build=x86_64-pc-linux-gnu
 build_os=linux-gnu
 
 # A sed program that does not truncate output.
-SED="/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/host/bin/sed"
+SED="/home/lancer/workspace/openwrt_clean/staging_dir/host/bin/sed"
 
 # Sed that helps us avoid accidentally triggering echo(1) options like -n.
 Xsed="$SED -e 1s/^X//"
 
 # A grep program that handles long lines.
-GREP="/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/host/bin/grep"
+GREP="/home/lancer/workspace/openwrt_clean/staging_dir/host/bin/grep"
 
 # An ERE matcher.
-EGREP="/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/host/bin/grep -E"
+EGREP="/home/lancer/workspace/openwrt_clean/staging_dir/host/bin/grep -E"
 
 # A literal string matcher.
-FGREP="/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/host/bin/grep -F"
+FGREP="/home/lancer/workspace/openwrt_clean/staging_dir/host/bin/grep -F"
 
 # A BSD- or MS-compatible name lister.
 NM="mips-openwrt-linux-musl-gcc-nm"
@@ -168,7 +168,7 @@ lock_old_archive_extraction=no
 LTCC="mips-openwrt-linux-musl-gcc"
 
 # LTCC compiler flags.
-LTCFLAGS="-Os -pipe -mno-branch-likely -mips32r2 -mtune=24kc -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -msoft-float -mips16 -minterlink-mips16 -iremap/home/lancer/workspace/gl-image/openwrt-18.06.git/build_dir/target-mips_24kc_musl/libtool-2.4.6:libtool-2.4.6 -Wformat -Werror=format-security -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro "
+LTCFLAGS="-Os -pipe -mno-branch-likely -mips32r2 -mtune=24kc -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -msoft-float -mips16 -minterlink-mips16 -iremap/home/lancer/workspace/openwrt_clean/build_dir/target-mips_24kc_musl/libtool-2.4.6:libtool-2.4.6 -Wformat -Werror=format-security -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro "
 
 # Take the output of nm and produce a listing of raw symbols and C names.
 global_symbol_pipe="sed -n -e 's/^.*[	 ]\\([ABCDGIRSTW][ABCDGIRSTW]*\\)[	 ][	 ]*\\([_A-Za-z][_A-Za-z0-9]*\\)\$/\\1 \\2 \\2/p' | sed '/ __gnu_lto/d'"
@@ -285,7 +285,7 @@ finish_eval=""
 hardcode_into_libs=yes
 
 # Compile-time system search path for libraries.
-sys_lib_search_path_spec="/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl/lib/gcc/mips-openwrt-linux-musl/7.3.0 /home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl/mips-openwrt-linux-musl/lib "
+sys_lib_search_path_spec="/home/lancer/workspace/openwrt_clean/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl/lib/gcc/mips-openwrt-linux-musl/7.3.0 /home/lancer/workspace/openwrt_clean/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl/mips-openwrt-linux-musl/lib "
 
 # Detected run-time system search path for libraries.
 sys_lib_dlsearch_path_spec="/lib /usr/lib /usr/lib/x86_64-linux-gnu/libfakeroot /lib/i386-linux-gnu /usr/lib/i386-linux-gnu /lib/i686-linux-gnu /usr/lib/i686-linux-gnu /usr/local/lib /lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu/mesa-egl /usr/lib/x86_64-linux-gnu/mesa "
@@ -11795,18 +11795,18 @@ file_list_spec=""
 hardcode_action=immediate
 
 # The directories searched by this compiler when creating a shared library.
-compiler_lib_search_dirs=" /home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl/lib/gcc/mips-openwrt-linux-musl/7.3.0 /home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl/lib/gcc/mips-openwrt-linux-musl/7.3.0/../../../../mips-openwrt-linux-musl/lib"
+compiler_lib_search_dirs=" /home/lancer/workspace/openwrt_clean/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl/lib/gcc/mips-openwrt-linux-musl/7.3.0 /home/lancer/workspace/openwrt_clean/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl/lib/gcc/mips-openwrt-linux-musl/7.3.0/../../../../mips-openwrt-linux-musl/lib"
 
 # Dependencies to place before and after the objects being linked to
 # create a shared library.
-predep_objects="/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl/lib/gcc/mips-openwrt-linux-musl/7.3.0/../../../../mips-openwrt-linux-musl/lib/crti.o /home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl/lib/gcc/mips-openwrt-linux-musl/7.3.0/crtbeginS.o"
-postdep_objects="/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl/lib/gcc/mips-openwrt-linux-musl/7.3.0/crtendS.o /home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl/lib/gcc/mips-openwrt-linux-musl/7.3.0/../../../../mips-openwrt-linux-musl/lib/crtn.o"
+predep_objects="/home/lancer/workspace/openwrt_clean/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl/lib/gcc/mips-openwrt-linux-musl/7.3.0/../../../../mips-openwrt-linux-musl/lib/crti.o /home/lancer/workspace/openwrt_clean/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl/lib/gcc/mips-openwrt-linux-musl/7.3.0/crtbeginS.o"
+postdep_objects="/home/lancer/workspace/openwrt_clean/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl/lib/gcc/mips-openwrt-linux-musl/7.3.0/crtendS.o /home/lancer/workspace/openwrt_clean/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl/lib/gcc/mips-openwrt-linux-musl/7.3.0/../../../../mips-openwrt-linux-musl/lib/crtn.o"
 predeps=""
 postdeps="-lstdc++ -lm -lssp_nonshared -lgcc_s -lc -lgcc_s"
 
 # The library search path used internally by the compiler when linking
 # a shared library.
-compiler_lib_search_path="-L -L/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl/lib/gcc/mips-openwrt-linux-musl/7.3.0 -L/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl/lib/gcc/mips-openwrt-linux-musl/7.3.0/../../../../mips-openwrt-linux-musl/lib"
+compiler_lib_search_path="-L -L/home/lancer/workspace/openwrt_clean/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl/lib/gcc/mips-openwrt-linux-musl/7.3.0 -L/home/lancer/workspace/openwrt_clean/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl/lib/gcc/mips-openwrt-linux-musl/7.3.0/../../../../mips-openwrt-linux-musl/lib"
 
 # ### END LIBTOOL TAG CONFIG: CXX
 

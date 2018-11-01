@@ -260,7 +260,7 @@ config DISPLAY_SUPPORT
 
 config BUILD_PATENTED
 	bool
-	default n
+	default y
 
 config BUILD_NLS
 	bool
@@ -634,7 +634,7 @@ config GLINET_OPENVPN
 	bool
 	default n
 
-config GLINET_L2TP
+config GLINET_WIREGUARD
 	bool
 	default n
 
@@ -642,11 +642,7 @@ config GLINET_SHADOWSOCKS
 	bool
 	default n
 
-config GLINET_ATH10K
-	bool
-	default n
-
-config GLINET_LUCI
+config GLINET_L2TP
 	bool
 	default n
 
@@ -654,19 +650,15 @@ config GLINET_STORAGE
 	bool
 	default n
 
-config HUAWEI_NCM
-	bool
-	default n
-
-config GLINET_MODEM
-	bool
-	default n
-
-config GLINET_TETHERING
+config GLINET_USB
 	bool
 	default n
 
 config GLINET_WEBCAM
+	bool
+	default n
+
+config GLINET_RTC
 	bool
 	default n
 
@@ -820,7 +812,7 @@ config IB
 
 config IB_STANDALONE
 	bool
-	default y
+	default n
 
 config SDK
 	bool
@@ -5566,6 +5558,10 @@ config PACKAGE_kmod-fs-cramfs
 	tristate
 	default m
 
+config PACKAGE_kmod-fs-exfat
+	tristate
+	default m
+
 config PACKAGE_kmod-fs-exportfs
 	tristate
 	default m
@@ -7030,6 +7026,10 @@ config PACKAGE_kmod-regmap
 	tristate
 	default m
 
+config PACKAGE_kmod-rtc-sd2068
+	tristate
+	default m
+
 config PACKAGE_kmod-sdhci
 	tristate
 	default m
@@ -7043,6 +7043,10 @@ config PACKAGE_kmod-softdog
 	default m
 
 config PACKAGE_kmod-ssb
+	tristate
+	default m
+
+config PACKAGE_kmod-ter-traffic
 	tristate
 	default m
 

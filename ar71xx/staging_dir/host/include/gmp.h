@@ -2317,7 +2317,7 @@ enum
 
 /* Define CC and CFLAGS which were used to build this version of GMP */
 #define __GMP_CC "gcc"
-#define __GMP_CFLAGS "-O2 -I/home/kyson/workspace/devlop/release/openwrt-18.06.git/staging_dir/host/include "
+#define __GMP_CFLAGS "-O2 -I/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/host/include "
 
 /* Major version number is the value of __GNU_MP__ too, above. */
 #define __GNU_MP_VERSION            6

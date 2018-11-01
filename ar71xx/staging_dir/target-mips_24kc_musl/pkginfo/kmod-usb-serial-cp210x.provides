@@ -1,5 +1,2 @@
 cp210x.ko
-nls_base.ko
-usb-common.ko
-usbcore.ko
 usbserial.ko

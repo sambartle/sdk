@@ -5,10 +5,10 @@
 # You can do whatever you want with this file.
 #
 
-prefix=/home/kyson/workspace/devlop/release/openwrt-18.06.git/staging_dir/host
-exec_prefix=/home/kyson/workspace/devlop/release/openwrt-18.06.git/staging_dir/host
-libdir=/home/kyson/workspace/devlop/release/openwrt-18.06.git/staging_dir/host/lib
-includedir=/home/kyson/workspace/devlop/release/openwrt-18.06.git/staging_dir/host/include
+prefix=/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/host
+exec_prefix=/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/host
+libdir=/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/host/lib
+includedir=/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/host/include
 
 Name: liblzma
 Description: General purpose data compression library

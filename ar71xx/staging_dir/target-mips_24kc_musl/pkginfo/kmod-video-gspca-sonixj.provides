@@ -1,0 +1,5 @@
+gspca_main.ko
+gspca_sonixj.ko
+input-core.ko
+v4l2-common.ko
+videodev.ko

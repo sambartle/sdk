@@ -103,8 +103,8 @@ extern "C" {
 
 /** the version of this header file */
 #define UNBOUND_VERSION_MAJOR 1
-#define UNBOUND_VERSION_MINOR 7
-#define UNBOUND_VERSION_MICRO 3
+#define UNBOUND_VERSION_MINOR 8
+#define UNBOUND_VERSION_MICRO 1
 
 /**
  * The validation context is created to hold the resolver status,
@@ -202,6 +202,12 @@ struct ub_result {
 	 * Is NULL if the result is not bogus.
 	 */
 	char* why_bogus;
+
+	/**
+	 * If the query or one of its subqueries was ratelimited. Useful if
+	 * ratelimiting is enabled and answer is SERVFAIL.
+	 */
+	int was_ratelimited;
 
 	/**
 	 * TTL for the result, in seconds.  If the security is bogus, then
@@ -674,6 +680,8 @@ struct ub_server_stats {
 	long long qtcp;
 	/** number of outgoing queries over TCP */
 	long long qtcp_outgoing;
+	/** number of queries over (DNS over) TLS */
+	long long qtls;
 	/** number of queries over IPv6 */
 	long long qipv6;
 	/** number of queries with QR bit */
@@ -757,6 +765,11 @@ struct ub_server_stats {
 	/** number of times neg cache records were used to generate NXDOMAIN
 	 * responses. */
 	long long num_neg_cache_nxdomain;
+	/** number of queries answered from edns-subnet specific data */
+	long long num_query_subnet;
+	/** number of queries answered from edns-subnet specific data, and
+	 * the answer was from the edns-subnet cache. */
+	long long num_query_subnet_cache;
 };
 
 /** 

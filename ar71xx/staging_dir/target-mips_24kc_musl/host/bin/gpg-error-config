@@ -10,8 +10,8 @@
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 
-prefix=/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/target-mips_24kc_musl/usr
-exec_prefix=/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/target-mips_24kc_musl/usr
+prefix=/home/lancer/workspace/openwrt_clean/staging_dir/target-mips_24kc_musl/usr
+exec_prefix=/home/lancer/workspace/openwrt_clean/staging_dir/target-mips_24kc_musl/usr
 includedir=${prefix}/include
 libdir=${exec_prefix}/lib
 isubdirafter=""

@@ -1,3 +1,4 @@
+crc16.ko
 crc32c_generic.ko
 crypto_hash.ko
 ext4.ko

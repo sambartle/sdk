@@ -73,7 +73,7 @@ first, and a last patch name of \`-' denotes the last patch in the series.
 
 --reply-to message
 	Add the appropriate headers to reply to the specified message.
-" "/home/kyson/workspace/devlop/release/openwrt-18.06.git/staging_dir/host/share/doc/quilt/README.MAIL"
+" "/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/host/share/doc/quilt/README.MAIL"
 		exit 0
 	else
 		exit 1

@@ -9,5 +9,5 @@ Version: 2.9.8
 Description: libXML library version2.
 Requires:
 Libs: -L${libdir} -lxml2
-Libs.private:   -L/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/target-mips_24kc_musl/usr/lib -lz   -lm  
+Libs.private:   -L/home/lancer/workspace/openwrt_clean/staging_dir/target-mips_24kc_musl/usr/lib -lz   -lm  
 Cflags: -I${includedir}/libxml2 
