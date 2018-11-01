@@ -14,6 +14,6 @@ Description: ncurses 6.1 library
 Version: ${version}
 URL: https://invisible-island.net/ncurses
 Requires.private: 
-Libs:  -Wl,-rpath,/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/lib -Wl,-rpath,/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/usr/lib -Wl,-rpath,/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/target-mipsel_24kc_musl/lib -Wl,-rpath,/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/target-mipsel_24kc_musl/usr/lib  -lncursesw
+Libs:  -Wl,-rpath,/home/lancer/workspace/openwrt_clean/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/lib -Wl,-rpath,/home/lancer/workspace/openwrt_clean/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/usr/lib -Wl,-rpath,/home/lancer/workspace/openwrt_clean/staging_dir/target-mipsel_24kc_musl/lib -Wl,-rpath,/home/lancer/workspace/openwrt_clean/staging_dir/target-mipsel_24kc_musl/usr/lib  -lncursesw
 Libs.private:  
 Cflags: 

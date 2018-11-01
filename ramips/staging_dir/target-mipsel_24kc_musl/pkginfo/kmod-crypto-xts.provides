@@ -1,6 +1,0 @@
-aead.ko
-crypto_hash.ko
-crypto_null.ko
-cryptomgr.ko
-gf128mul.ko
-xts.ko

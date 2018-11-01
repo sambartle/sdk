@@ -1,7 +1,0 @@
-cfg80211.ko
-compat.ko
-iwlegacy.ko
-libc.so
-libgcc_s.so.1
-libnl-tiny.so
-mac80211.ko

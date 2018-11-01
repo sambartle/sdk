@@ -1,9 +1,0 @@
-b43.ko
-bcma.ko
-cfg80211.ko
-compat.ko
-libc.so
-libgcc_s.so.1
-libnl-tiny.so
-mac80211.ko
-ssb.ko

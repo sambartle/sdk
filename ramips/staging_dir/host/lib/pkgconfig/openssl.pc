@@ -1,7 +1,7 @@
 #openssl pkg-config source file
 
-prefix=/home/kyson/workspace/devlop/release/openwrt-18.06.git/staging_dir/host
-exec_prefix=/home/kyson/workspace/devlop/release/openwrt-18.06.git/staging_dir/host
+prefix=/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/host
+exec_prefix=/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/host
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include
 

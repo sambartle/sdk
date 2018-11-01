@@ -260,7 +260,7 @@ config DISPLAY_SUPPORT
 
 config BUILD_PATENTED
 	bool
-	default n
+	default y
 
 config BUILD_NLS
 	bool
@@ -634,7 +634,7 @@ config GLINET_OPENVPN
 	bool
 	default n
 
-config GLINET_L2TP
+config GLINET_WIREGUARD
 	bool
 	default n
 
@@ -642,11 +642,7 @@ config GLINET_SHADOWSOCKS
 	bool
 	default n
 
-config GLINET_ATH10K
-	bool
-	default n
-
-config GLINET_LUCI
+config GLINET_L2TP
 	bool
 	default n
 
@@ -654,19 +650,15 @@ config GLINET_STORAGE
 	bool
 	default n
 
-config HUAWEI_NCM
-	bool
-	default n
-
-config GLINET_MODEM
-	bool
-	default n
-
-config GLINET_TETHERING
+config GLINET_USB
 	bool
 	default n
 
 config GLINET_WEBCAM
+	bool
+	default n
+
+config GLINET_RTC
 	bool
 	default n
 
@@ -820,7 +812,7 @@ config IB
 
 config IB_STANDALONE
 	bool
-	default y
+	default n
 
 config SDK
 	bool
@@ -5054,6 +5046,10 @@ config PACKAGE_uci
 	bool
 	default y
 
+config PACKAGE_wireless-tools
+	tristate
+	default m
+
 config PACKAGE_ar3k-firmware
 	tristate
 	default m
@@ -5203,6 +5199,10 @@ config PACKAGE_wl12xx-firmware
 	default m
 
 config PACKAGE_wl18xx-firmware
+	tristate
+	default m
+
+config PACKAGE_uci2dat
 	tristate
 	default m
 
@@ -5571,6 +5571,10 @@ config PACKAGE_kmod-fs-configfs
 	default m
 
 config PACKAGE_kmod-fs-cramfs
+	tristate
+	default m
+
+config PACKAGE_kmod-fs-exfat
 	tristate
 	default m
 
@@ -7078,6 +7082,10 @@ config PACKAGE_kmod-ssb
 	tristate
 	default m
 
+config PACKAGE_kmod-ter-traffic
+	tristate
+	default m
+
 config PACKAGE_kmod-tpm
 	tristate
 	default m
@@ -8067,6 +8075,214 @@ config PACKAGE_kmod-mt7601u
 	default m
 
 config PACKAGE_kmod-mt7603
+	bool
+	default y
+
+config PACKAGE_kmod-mt7628
+	tristate
+	default m
+
+config MT_WIFI
+	tristate
+	default m
+
+config RALINK_MT7628
+	bool
+	default y
+
+config MT7628
+	bool
+	default y
+
+config FIRST_IF_EEPROM_FLASH
+	bool
+	default y
+
+config RT_FIRST_CARD_EEPROM
+	string
+	default "flash"
+
+config SECOND_IF_EEPROM_PROM
+	bool
+	default y
+
+config SECOND_IF_EEPROM_EFUSE
+	bool
+	default n
+
+config SECOND_IF_EEPROM_FLASH
+	bool
+	default n
+
+config RT_FIRST_IF_RF_OFFSET
+	string
+	default "262144"
+
+config RT_FIRST_CARD
+	string
+	default "7628"
+
+config RT_SECOND_CARD_EEPROM
+	string
+	default "prom"
+
+config MULTI_INF_SUPPORT
+	bool
+	default y
+
+config WIFI_BASIC_FUNC
+	bool
+	default y
+
+config MT7628_WSC_INCLUDED
+	bool
+	default y
+
+config MT7628_WSC_V2_SUPPORT
+	bool
+	default y
+
+config MT7628_DOT11W_PMF_SUPPORT
+	bool
+	default y
+
+config MT7628_LLTD_SUPPORT
+	bool
+	default n
+
+config MT7628_QOS_DLS_SUPPORT
+	bool
+	default n
+
+config MT7628_IGMP_SNOOP_SUPPORT
+	bool
+	default n
+
+config MT7628_BLOCK_NET_IF
+	bool
+	default n
+
+config MT7628_RATE_ADAPTION
+	bool
+	default y
+
+config MT7628_NEW_RATE_ADAPT_SUPPORT
+	bool
+	default y
+
+config MT7628_AGS_SUPPORT
+	bool
+	default n
+
+config MT7628_IDS_SUPPORT
+	bool
+	default n
+
+config MT7628_WIFI_WORK_QUEUE
+	bool
+	default n
+
+config MT7628_WIFI_SKB_RECYCLE
+	bool
+	default n
+
+config MT7628_SMART_CARRIER_SENSE_SUPPORT
+	bool
+	default y
+
+config MT7628_LED_CONTROL_SUPPORT
+	bool
+	default n
+
+config MT7628_ATE_SUPPORT
+	bool
+	default y
+
+config MT7628_MEMORY_OPTIMIZATION
+	bool
+	default n
+
+config MT7628_PASSPOINT_R2
+	bool
+	default n
+
+config MT7628_SINGLE_SKU
+	bool
+	default n
+
+config MT7628_UAPSD
+	bool
+	default y
+
+config MT7628_ELIAN
+	bool
+	default n
+
+config MT_MAC
+	bool
+	default y
+
+config MT_WIFI_MODE_AP
+	bool
+	default y
+
+config MT_WIFI_MODE_STA
+	bool
+	default n
+
+config MT_WIFI_MODE_BOTH
+	bool
+	default n
+
+config MT7628_AP_SUPPORT
+	tristate
+	default m
+
+config MT7628_WDS_SUPPORT
+	bool
+	default y
+
+config MT7628_MBSS_SUPPORT
+	bool
+	default y
+
+config MT7628_NEW_MBSSID_MODE
+	bool
+	default y
+
+config MT7628_ENHANCE_NEW_MBSSID_MODE
+	bool
+	default y
+
+config MT7628_APCLI_SUPPORT
+	bool
+	default y
+
+config MT7628_MAC_REPEATER_SUPPORT
+	bool
+	default y
+
+config MT7628_DOT11R_FT_SUPPORT
+	bool
+	default n
+
+config MT7628_SNIFFER_SUPPORT
+	bool
+	default n
+
+config MT7628_CON_WPS_SUPPORT
+	bool
+	default n
+
+config MT7628_AIRPLAY_SUPPORT
+	bool
+	default n
+
+config MT7628_BAND_STEERING
+	bool
+	default n
+
+config MT_AP_SUPPORT
 	bool
 	default y
 

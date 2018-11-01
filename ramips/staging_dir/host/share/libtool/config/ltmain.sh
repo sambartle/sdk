@@ -147,10 +147,10 @@ if test -n "$STAGING_DIR"; then
 	: ${GREP="$STAGING_DIR/../host/bin/grep"}
 	: ${SED="$STAGING_DIR/../host/bin/sed"}
 else
-	: ${EGREP="/home/kyson/workspace/devlop/release/openwrt-18.06.git/staging_dir/host/bin/grep -E"}
-	: ${FGREP="/home/kyson/workspace/devlop/release/openwrt-18.06.git/staging_dir/host/bin/grep -F"}
-	: ${GREP="/home/kyson/workspace/devlop/release/openwrt-18.06.git/staging_dir/host/bin/grep"}
-	: ${SED="/home/kyson/workspace/devlop/release/openwrt-18.06.git/staging_dir/host/bin/sed"}
+	: ${EGREP="/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/host/bin/grep -E"}
+	: ${FGREP="/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/host/bin/grep -F"}
+	: ${GREP="/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/host/bin/grep"}
+	: ${SED="/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/host/bin/sed"}
 fi
 : ${SHELL="${CONFIG_SHELL-/bin/sh}"}
 : ${Xsed="$SED -e 1s/^X//"}

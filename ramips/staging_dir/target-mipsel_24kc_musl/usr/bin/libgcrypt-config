@@ -16,9 +16,9 @@ prefix="/usr"
 exec_prefix="/usr"
 version="1.6.6"
 includedir="${prefix}/include"
-libdir="/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/target-mipsel_24kc_musl/usr/lib"
-gpg_error_libs="-L/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/target-mipsel_24kc_musl/usr/lib -lgpg-error"
-gpg_error_cflags="-I/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/target-mipsel_24kc_musl/usr/include"
+libdir="/home/lancer/workspace/openwrt_clean/staging_dir/target-mipsel_24kc_musl/usr/lib"
+gpg_error_libs="-L/home/lancer/workspace/openwrt_clean/staging_dir/target-mipsel_24kc_musl/usr/lib -lgpg-error"
+gpg_error_cflags="-I/home/lancer/workspace/openwrt_clean/staging_dir/target-mipsel_24kc_musl/usr/include"
 
 # libgcrypt values.
 libs="-lgcrypt"

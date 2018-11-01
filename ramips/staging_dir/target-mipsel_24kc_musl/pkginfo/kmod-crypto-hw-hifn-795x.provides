@@ -1,6 +1,0 @@
-aead.ko
-crypto_hash.ko
-crypto_null.ko
-cryptomgr.ko
-des_generic.ko
-hifn_795x.ko

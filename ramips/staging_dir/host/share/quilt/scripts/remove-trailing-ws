@@ -33,7 +33,7 @@ BEGIN {
 }
 
 setlocale(LC_MESSAGES, "");
-bindtextdomain("quilt", $ENV{'STAGING_DIR_HOST'} ? $ENV{'STAGING_DIR_HOST'} . '/share/locale' : "/home/kyson/workspace/devlop/release/openwrt-18.06.git/staging_dir/host/share/locale");
+bindtextdomain("quilt", $ENV{'STAGING_DIR_HOST'} ? $ENV{'STAGING_DIR_HOST'} . '/share/locale' : "/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/host/share/locale");
 textdomain("quilt");
 
 sub _($) {

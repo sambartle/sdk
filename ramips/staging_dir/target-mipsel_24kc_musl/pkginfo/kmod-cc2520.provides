@@ -1,8 +1,0 @@
-aead.ko
-cc2520.ko
-crc-ccitt.ko
-crypto_hash.ko
-crypto_null.ko
-ieee802154.ko
-ieee802154_socket.ko
-mac802154.ko

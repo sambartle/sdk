@@ -42,11 +42,11 @@
 
 : ${AUTOCONF="autoconf"}
 : ${AUTOMAKE="automake"}
-: ${EGREP="/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/host/bin/grep -E"}
-: ${FGREP="/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/host/bin/grep -F"}
-: ${GREP="/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/host/bin/grep"}
+: ${EGREP="/home/lancer/workspace/openwrt_clean/staging_dir/host/bin/grep -E"}
+: ${FGREP="/home/lancer/workspace/openwrt_clean/staging_dir/host/bin/grep -F"}
+: ${GREP="/home/lancer/workspace/openwrt_clean/staging_dir/host/bin/grep"}
 : ${LN_S="ln -s"}
-: ${SED="/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/host/bin/sed"}
+: ${SED="/home/lancer/workspace/openwrt_clean/staging_dir/host/bin/sed"}
 
 
 ## -------------------------- ##
@@ -4290,11 +4290,11 @@ func_require_seen_libtool ()
   pkgmacro_files="libtool.m4 ltargz.m4 ltdl.m4 ltoptions.m4 ltsugar.m4 ltversion.m4 lt~obsolete.m4"
 
   # Locations for important files:
-  prefix="/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/hostpkg"
-  datadir="/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/hostpkg/share"
-  pkgauxdir="/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/hostpkg/share/libtool/build-aux"
-  pkgltdldir="/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/hostpkg/share/libtool"
-  aclocaldir="/home/lancer/workspace/gl-image/openwrt-18.06.git/staging_dir/hostpkg/share/aclocal"
+  prefix="/home/lancer/workspace/openwrt_clean/staging_dir/hostpkg"
+  datadir="/home/lancer/workspace/openwrt_clean/staging_dir/hostpkg/share"
+  pkgauxdir="/home/lancer/workspace/openwrt_clean/staging_dir/hostpkg/share/libtool/build-aux"
+  pkgltdldir="/home/lancer/workspace/openwrt_clean/staging_dir/hostpkg/share/libtool"
+  aclocaldir="/home/lancer/workspace/openwrt_clean/staging_dir/hostpkg/share/aclocal"
 
   # Allow the user to override the master libtoolize repository:
   if test -n "$_lt_pkgdatadir"; then

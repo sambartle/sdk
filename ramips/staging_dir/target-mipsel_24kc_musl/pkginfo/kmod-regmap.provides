@@ -1,8 +1,0 @@
-crypto_acompress.ko
-i2c-core.ko
-i2c-dev.ko
-lzo.ko
-lzo_compress.ko
-lzo_decompress.ko
-regmap-i2c.ko
-regmap-spi.ko
